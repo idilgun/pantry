@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: pantry-postgres
+    environment:
+      POSTGRES_DB: pantry
+      POSTGRES_USER: pantry
+      POSTGRES_PASSWORD: pantry
+    ports:
+      - "5432:5432"
+    volumes:
+      - pantry-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  pantry-postgres-data:
