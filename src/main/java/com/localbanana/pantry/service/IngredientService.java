@@ -80,7 +80,11 @@ public class IngredientService {
     public Ingredient markAsOut(Long ingredientId) {
         Ingredient ingredient = getIngredientById(ingredientId);
         ingredient.setIsAvailable(false);
-        ingredient.setQuantity(null);
+        if (ingredient.getTrackingType().equals("stocked")) {
+            ingredient.setQuantity(null);
+        } else {
+            ingredient.setQuantity(BigDecimal.ZERO);
+        }
         return ingredientRepository.save(ingredient);
     }
 }
