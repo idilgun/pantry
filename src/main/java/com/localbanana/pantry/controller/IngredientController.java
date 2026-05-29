@@ -73,6 +73,7 @@ public class IngredientController {
                 ingredient.getCategory().getName(),
                 ingredient.getCustomShelfLifeDays(),
                 ingredient.getIsAvailable(),
+                ingredient.getIsFrozen(),
                 ingredient.getAddedAt()
         );
     }

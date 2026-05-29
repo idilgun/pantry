@@ -13,5 +13,6 @@ public record IngredientDto(
         String categoryName,
         Integer customShelfLifeDays,
         Boolean isAvailable,
+        Boolean isFrozen,
         LocalDateTime addedAt
 ) {}

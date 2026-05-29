@@ -54,6 +54,7 @@ public class IngredientService {
         ingredient.setCanonicalUnit(canonicalUnit);
         ingredient.setCustomShelfLifeDays(customShelfLifeDays);
         ingredient.setIsAvailable(true);
+        ingredient.setIsFrozen(false);
         ingredient.setAddedAt(LocalDateTime.now());
 
         return ingredientRepository.save(ingredient);

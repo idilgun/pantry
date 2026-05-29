@@ -42,6 +42,9 @@ public class Ingredient {
     @Column(nullable = false)
     private Boolean isAvailable;
 
+    @Column(nullable = false)
+    private Boolean isFrozen;
+
     @Column(nullable = false, updatable = false)
     private LocalDateTime addedAt;
 }
