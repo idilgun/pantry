@@ -33,6 +33,15 @@ public class IngredientController {
         return toDto(ingredientService.getIngredientById(id));
     }
 
+    @GetMapping("/search")
+    public List<IngredientDto> searchIngredients(@PathVariable Long householdId,
+                                                  @RequestParam("q") String query) {
+        return ingredientService.searchByName(householdId, query)
+                .stream()
+                .map(this::toDto)
+                .toList();
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public IngredientDto addIngredient(@PathVariable Long householdId,

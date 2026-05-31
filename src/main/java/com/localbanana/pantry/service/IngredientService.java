@@ -77,6 +77,11 @@ public class IngredientService {
         return ingredientRepository.save(ingredient);
     }
 
+    @Transactional(readOnly = true)
+    public List<Ingredient> searchByName(Long householdId, String query) {
+        return ingredientRepository.searchByNameFuzzy(householdId, query);
+    }
+
     public Ingredient markAsOut(Long ingredientId) {
         Ingredient ingredient = getIngredientById(ingredientId);
         ingredient.setIsAvailable(false);
